@@ -3,12 +3,25 @@ const mySubmit = document.getElementById("submitButton");
 const myResult = document.getElementById("resultAge");
 let age;
 
-function check(){
+
+mySubmit.onclick = function(){CheckAge()}
+
+function CheckAge(){
     age = myText.value;
     age = Number(age);
-    if(age > 0){
-        document.getElementById("resultAge").textContent = "hi"
+    if(age == 0){
+        document.getElementById("resultAge").textContent = "Are you even old enough to talk?"
     }
+    else if(age > 21){
+        document.getElementById("resultAge").textContent = "Woah there, you're older than my older sister? Crazy."
+    }
+    else if(age < 6){
+        document.getElementById("resultAge").textContent = "Go play on your iPad, kid."
+    }
+    else if(age >= 14){
+        document.getElementById("resultAge").textContent = "Wow, you are older than my little brother.. Good job!!"
+    }
+    else if(age <= 13){
+        document.getElementById("resultAge").textContent = "Oh, I guess you are younger than my little brother.."
+    } 
 }
-
-mySubmit.onclick = check()
